@@ -1,0 +1,27 @@
+{
+  "name": "umi-plugin-auto-tools",
+  "version": "0.0.1",
+  "description": "umi project auto tools",
+  "authors": {
+    "name": "pigchilde",
+    "email": "pigchilde@gmail.com"
+  },
+  "repository": "/auto-tools",
+  "peerDependencies": {
+    "umi": "2.x"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "umi-tools build",
+    "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish"
+  },
+  "devDependencies": {
+    "umi-tools": "*",
+    "np": "^3.0.4"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "license": "MIT"
+}
