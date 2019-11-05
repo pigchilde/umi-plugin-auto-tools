@@ -7,6 +7,12 @@ Umi 项目自动构建功能
  - 增加时间戳
  - 编译时避免Version.txt文件的删除
 
+## Install
+
+```js
+npm i umi-plugin-auto-tools --save-dev
+```
+ 
 ## Usage
 
 Configure in `.umirc.js`,
