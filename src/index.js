@@ -2,6 +2,11 @@ const fs = require('fs');
 
 export default function (api, options) {
 
+  const { enable = false, timestampFiles } = options;
+
+  // enable为false，则直接退出插件
+  if(!enable) return;
+
   // 如果编译的文件夹不存在，则直接退出程序
   if(!fsExistsSync(api.paths.outputPath)) {
     console.error('没有找到编译后的文件夹，请确认是否已经编译文件！');
@@ -38,11 +43,10 @@ export default function (api, options) {
       fs.writeFileSync(file, versionStr);
     }
 
-    if(options.timestampFiles !== undefined) {
+    if(timestampFiles !== undefined) {
       // 读取html文件，添加时间戳
       let htmlStr = fs.readFileSync(api.paths.outputPath + '/index.html', 'utf-8');
       const timestamp = new Date().getTime();
-      const timestampFiles = options.timestampFiles;
 
       for(let i=0; i< timestampFiles.length; i++){
         htmlStr = htmlStr.replace(timestampFiles[i], timestampFiles[i] + '?v=' + timestamp);
