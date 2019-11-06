@@ -18,7 +18,7 @@ export default function (api, options) {
   let versionStr  = '';
 
   // 构建前缓存Version.txt的内容
-  api.beforeBuildCompileAsync(() => {
+  api.onStart(() => {
     // 读取Version.txt的内容
     if(fsExistsSync(file) || fsExistsSync(file1) || fsExistsSync(api.paths.outputPath + '/version.txt') || fsExistsSync(api.paths.outputPath + '/versions.txt')) {
       if(fsExistsSync(file)) {
