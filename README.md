@@ -28,7 +28,8 @@ export default {
     [
       'umi-plugin-auto-tools', 
       {
-        timestampFiles: ['umi.css', 'umi.js'] // 需要增加时间戳的文件列表
+        enable: true, // 插件开关，默认为fasle 
+        timestampFiles: ['umi.css', 'umi.js']
       }
     ],
   ],
