@@ -12,6 +12,11 @@ Umi 项目自动构建功能
 ```js
 npm i umi-plugin-auto-tools --save-dev
 ```
+## Update
+
+```js
+npm update umi-plugin-auto-tools --save-dev
+```
  
 ## Usage
 
@@ -20,9 +25,12 @@ Configure in `.umirc.js`,
 ```js
 export default {
   plugins: [
-    ['umi-plugin-auto-tools', {
-      timestampFiles: ['umi.css', 'umi.js'] // 需要增加时间戳的文件列表
-    }],
+    [
+      'umi-plugin-auto-tools', 
+      {
+        timestampFiles: ['umi.css', 'umi.js'] // 需要增加时间戳的文件列表
+      }
+    ],
   ],
 }
 ```

@@ -2,7 +2,7 @@ import { join } from 'path';
 
 export default {
   plugins: [
-    ['../src/index.js',{
+    ['../lib/index.js',{
       timestampFiles: ['umi.css', 'umi.js']
     }]
   ],

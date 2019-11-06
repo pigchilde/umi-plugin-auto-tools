@@ -9,18 +9,26 @@ export default function (api, options) {
   }
 
   const file = api.paths.outputPath + '/Version.txt';
+  const file1 = api.paths.outputPath + '/Versions.txt';
   let versionStr  = '';
 
   // 构建前缓存Version.txt的内容
   api.beforeBuildCompileAsync(() => {
     // 读取Version.txt的内容
-    if(fsExistsSync(file) || fsExistsSync(api.paths.outputPath + '/version.txt')) {
-      versionStr = fs.readFileSync(api.paths.outputPath + '/Version.txt', 'utf-8');
+    if(fsExistsSync(file) || fsExistsSync(file1) || fsExistsSync(api.paths.outputPath + '/version.txt') || fsExistsSync(api.paths.outputPath + '/versions.txt')) {
+      if(fsExistsSync(file)) {
+        versionStr = fs.readFileSync(file, 'utf-8');
+      }
+
+      if(fsExistsSync(file1)) {
+        versionStr = fs.readFileSync(file1, 'utf-8');
+      }
+      
       return true;
     }else{
       console.error('Version.txt文件不存在！');
     }
-  })
+  });
 
   // 构建成功后的操作
   api.onBuildSuccess(() => {
@@ -39,6 +47,8 @@ export default function (api, options) {
       for(let i=0; i< timestampFiles.length; i++){
         htmlStr = htmlStr.replace(timestampFiles[i], timestampFiles[i] + '?v=' + timestamp);
       }
+
+      fs.writeFileSync(api.paths.outputPath + '/index.html', htmlStr);
     }
   })
 

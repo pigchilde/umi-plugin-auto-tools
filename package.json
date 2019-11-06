@@ -1,12 +1,12 @@
 {
   "name": "umi-plugin-auto-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "umi project auto tools",
   "authors": {
     "name": "pigchilde",
     "email": "pigchilde@gmail.com"
   },
-  "repository": "/auto-tools",
+  "repository": "https://github.com/pigchilde/umi-plugin-auto-tools",
   "peerDependencies": {
     "umi": "2.x"
   },
