@@ -5,7 +5,7 @@
 
 Umi 项目自动构建功能
  - 增加时间戳
- - 编译时避免Version.txt文件的删除
+ - 编译时避免Version.txt文件的删除(保证Version.txt文件名首字母大写，以及不加S)
 
 ## Install
 
@@ -38,6 +38,7 @@ export default {
 ## Options
 
 TODO
+- 增加自动生成Version记录功能
 
 ## LICENSE
 
