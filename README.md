@@ -29,7 +29,7 @@ export default {
       'umi-plugin-auto-tools', 
       {
         enable: true, // 插件开关，默认为fasle 
-        reservedFiles: ['img/img1/1.png'], // 配置需要保留的相对于dist文件夹的文件列表，Version.txt可以不用配置，默认直接支持保留
+        reservedFiles: ['img/img1/1.png'], // 可选项，配置需要保留的相对于dist文件夹的文件列表，Version.txt可以不用配置，默认直接支持保留
         timestampFiles: ['umi.css', 'umi.js'] // 需要增加时间戳的文件列表
       }
     ],
