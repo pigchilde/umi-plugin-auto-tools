@@ -15,7 +15,7 @@ npm i umi-plugin-auto-tools --save-dev
 ## Update
 
 ```js
-npm i umi-plugin-auto-tools@latest
+npm i umi-plugin-auto-tools@latest --save-dev
 ```
  
 ## Usage
